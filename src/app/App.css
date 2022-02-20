@@ -15,24 +15,23 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 5vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row !important;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'JetBrains Mono', 'monospace';
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  padding:20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bar-logo {
+  height: 3vh;
+  margin-right: 5px;
+  /* display: inline; */
 }

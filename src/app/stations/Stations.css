@@ -1,0 +1,15 @@
+.transport-icon {
+    width: 15px;
+    height: 15px;
+    opacity: 0.7;
+    margin-right: 5px;
+}
+
+.station-info {
+    font-size: 0.8em;
+}
+
+.station-box {
+    display: flex;
+    flex-direction: row;
+}
