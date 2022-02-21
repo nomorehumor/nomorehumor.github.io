@@ -1,50 +1,40 @@
-import React from "react"
+import React, { useState } from "react"
 
-export class DirectionArrow extends React.Component {
+export function DirectionArrow(props) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            compass: null
-        }
-    }
+    var [compass, setCompass] = useState(null)
 
-    componentDidMount() {
-        this.startCompass()
-    }
-
-    startCompass() {
+    var startCompass = () => {
         const isIOS = (
             navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
             navigator.userAgent.match(/AppleWebKit/)
         );
     
-        console.log("ios: " + isIOS)
         if (isIOS) {
-          DeviceOrientationEvent.requestPermission()
+        DeviceOrientationEvent.requestPermission()
             .then((response) => {
-              if (response === "granted") {
-                window.addEventListener("deviceorientation", this.compassHandler, true);
-              } else {
+            if (response === "granted") {
+                window.addEventListener("deviceorientation", compassHandler, true);
+            } else {
                 alert("has to be allowed!");
-              }
+            }
             })
-            .catch(() => alert("not supported"));
+            .catch(() => alert("Compass not supported"));
         } else {
-          window.addEventListener("deviceorientationabsolute", this.compassHandler, true);
+            window.addEventListener("deviceorientationabsolute", compassHandler, true);
         }
     }
 
-    compassHandler(e) {
-        let compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);
-        console.log(compass)
-        this.setState({compass: compass})
+    var compassHandler = (e) => {
+        let compassValue = e.webkitCompassHeading || Math.abs(e.alpha - 360);
+        console.log(compassValue)
+        setCompass(compassValue)
         // compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
     }
 
-    render() {
-        return <div>
-            compass {this.state.compass}
-        </div>
-    }
+    startCompass();
+
+    return <div>
+        compass {compass}
+    </div>
 }
