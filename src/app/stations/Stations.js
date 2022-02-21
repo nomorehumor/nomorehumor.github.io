@@ -1,7 +1,7 @@
 import { Paper, Stack } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react'
-import { DirectionArrow } from './DirectionArrow';
+import { DirectionArrow } from './direction/DirectionArrow';
 import "./Stations.css"
 
 let googleNearbyAPI = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
@@ -61,7 +61,7 @@ class Stations extends React.Component {
         const apiRequest = googleNearbyAPI + params
 
         fetch(
-            "https://cors-city-navigator.herokuapp.com/".concat(apiRequest), 
+            process.env.REACT_APP_CORS_PROXY_URL.concat(apiRequest), 
             {
                 method: 'GET',
                 headers: {'Content-Type':'application/json'},
@@ -158,7 +158,7 @@ class Station extends React.Component {
             })
             const apiRequest = googleDistanceAPI + params
 
-            fetch("https://cors-city-navigator.herokuapp.com/".concat(apiRequest))
+            fetch(process.env.REACT_APP_CORS_PROXY_URL.concat(apiRequest))
             .then(response => response.json())
             .then(data => this.handleDistanceResponse(data))
         }
