@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/City-Navigator/static/css/main.7acebc09.chunk.css",
+    "main.js": "/City-Navigator/static/js/main.4b72af75.chunk.js",
+    "main.js.map": "/City-Navigator/static/js/main.4b72af75.chunk.js.map",
+    "runtime~main.js": "/City-Navigator/static/js/runtime~main.74326330.js",
+    "runtime~main.js.map": "/City-Navigator/static/js/runtime~main.74326330.js.map",
+    "static/js/2.7f3b29dc.chunk.js": "/City-Navigator/static/js/2.7f3b29dc.chunk.js",
+    "static/js/2.7f3b29dc.chunk.js.map": "/City-Navigator/static/js/2.7f3b29dc.chunk.js.map",
+    "index.html": "/City-Navigator/index.html",
+    "precache-manifest.43945d0cf8c3855fdcac70a2de20d2c6.js": "/City-Navigator/precache-manifest.43945d0cf8c3855fdcac70a2de20d2c6.js",
+    "service-worker.js": "/City-Navigator/service-worker.js",
+    "static/css/main.7acebc09.chunk.css.map": "/City-Navigator/static/css/main.7acebc09.chunk.css.map"
+  }
+}
